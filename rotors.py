@@ -75,4 +75,5 @@ class Rotor:
         # Appends the first num letters to the end of
         # the Alphabet to simulate a rotation of the rotor.
         self.alphabet = self.alphabet[num % 26:] + self.alphabet[:num % 26]
-        return self.alphabet[-1] == self.switchPos
+        if self.alphabet[-1] == self.switchPos and self.leftAdjacentRotor:
+            self.leftAdjacentRotor.turn()
