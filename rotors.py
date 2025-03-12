@@ -36,6 +36,7 @@ class Rotor:
             case 13:
                 return "FVPJIAOYEDRZXWGCTKUQSBNMHL"
             case _:
+                print(f"Error with choosing substitution alphabet! Input was {self.num} of type {type(self.num)}")
                 return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     def getSwichPos(self) -> str:
@@ -67,6 +68,7 @@ class Rotor:
             case 13:
                 return "Z"
             case _:
+                print(f"Error with choosing switching position! Input was {self.num} of type {type(self.num)}")
                 return "Z"
 
     def turn(self, num: int) -> None:
