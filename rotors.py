@@ -85,4 +85,4 @@ class Rotor:
         return self.alphabet[ord(char.upper()) - 65]
 
     def backward(self, char) -> str:
-        return chr(list(self.alphabet).index(char) + 65)
+        return chr(list(self.alphabet).index(char.upper()) + 65)
