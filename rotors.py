@@ -1,5 +1,5 @@
 class Rotor:
-    def __init__(self, num: int, leftAdjacentRotor: Rotor | None):
+    def __init__(self, num: int, leftAdjacentRotor = None):
         self.num = num
         self.leftAdjacentRotor = leftAdjacentRotor
         self.alphabet = self.getAlphabet()
@@ -39,7 +39,7 @@ class Rotor:
                 print(f"Error with choosing substitution alphabet! Input was {self.num} of type {type(self.num)}")
                 return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    def getSwichPos(self) -> str:
+    def getSwitchPos(self) -> str:
         match self.num:
             case 1:
                 return "Q"
@@ -77,3 +77,6 @@ class Rotor:
         self.alphabet = self.alphabet[num % 26:] + self.alphabet[:num % 26]
         if self.alphabet[-1] == self.switchPos and self.leftAdjacentRotor:
             self.leftAdjacentRotor.turn()
+
+    def setAlphabet(self, alphabet) -> None:
+        self.alphabet = alphabet
