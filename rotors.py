@@ -71,7 +71,7 @@ class Rotor:
                 print(f"Error with choosing switching position! Input was {self.num} of type {type(self.num)}")
                 return "Z"
 
-    def turn(self, num: int) -> None:
+    def turn(self, num: int = 1) -> None:
         # Appends the first num letters to the end of
         # the Alphabet to simulate a rotation of the rotor.
         self.alphabet = self.alphabet[num % 26:] + self.alphabet[:num % 26]
@@ -80,3 +80,8 @@ class Rotor:
 
     def setAlphabet(self, alphabet) -> None:
         self.alphabet = alphabet
+
+    def forward(self, char) -> str:
+        out = self.alphabet[ord(char) - 65]
+        self.turn()
+        return out
