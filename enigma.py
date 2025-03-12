@@ -16,5 +16,6 @@ class Enigma:
             print("Error with choosing connections, connections contain non alphabetic characters! ")
             return ""
         for i in range(len(inpt) // 2):
+            # Only works if chars are in alphabetical order... don´t know why, but on the other hand why bother
             alphabet[alphabet.index(inpt[i * 2])], alphabet[alphabet.index(inpt[i * 2 + 1])] = inpt[i * 2 + 1], inpt[i * 2]
         return str("".join(alphabet))
