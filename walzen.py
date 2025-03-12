@@ -2,6 +2,7 @@ class Walze:
     def __init__(self, num):
         self.num = num
         self.alphabet = self.getAlphabet()
+        self.switchPos = self.getSwitchPos()
 
     def getAlphabet(self) -> str:
         # Get´s the substitution alphabet for the different rotors.
@@ -36,7 +37,39 @@ class Walze:
             case _:
                 return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+    def getSwichPos(self) -> str:
+        match self.num:
+            case 1:
+                return "Q"
+            case 2:
+                return "E"
+            case 3:
+                return "V"
+            case 4:
+                return "J"
+            case 5:
+                return "Z"
+            case 6:
+                return "ZM"
+            case 7:
+                return "ZM"
+            case 8:
+                return "ZM"
+            case 9:
+                return "Z"
+            case 10:
+                return "Z"
+            case 11:
+                return "Z"
+            case 12:
+                return "Z"
+            case 13:
+                return "Z"
+            case _:
+                return "Z"
+
     def turn(self, num) -> None:
         # Appends the first num letters to the end of
         # the Alphabet to simulate a rotation of the rotor.
         self.alphabet = self.alphabet[num % 26:] + self.alphabet[:num % 26]
+        return self.alphabet[-1] == self.switchPos
