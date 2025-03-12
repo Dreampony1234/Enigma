@@ -1,6 +1,7 @@
 class Rotor:
-    def __init__(self, num):
+    def __init__(self, num: int, leftAdjacentRotor: Rotor | None):
         self.num = num
+        self.leftAdjacentRotor = leftAdjacentRotor
         self.alphabet = self.getAlphabet()
         self.switchPos = self.getSwitchPos()
 
@@ -68,7 +69,7 @@ class Rotor:
             case _:
                 return "Z"
 
-    def turn(self, num) -> None:
+    def turn(self, num: int) -> None:
         # Appends the first num letters to the end of
         # the Alphabet to simulate a rotation of the rotor.
         self.alphabet = self.alphabet[num % 26:] + self.alphabet[:num % 26]
