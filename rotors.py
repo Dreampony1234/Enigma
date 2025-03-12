@@ -1,4 +1,4 @@
-class Walze:
+class Rotor:
     def __init__(self, num):
         self.num = num
         self.alphabet = self.getAlphabet()

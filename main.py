@@ -1,5 +1,5 @@
 import enigma as egm
-import walzen as wz
+import rotors as rt
 
 if __name__ == "main":
     pass
