@@ -4,7 +4,7 @@ class Walze:
         self.alphabet = self.getAlphabet()
 
     def getAlphabet(self) -> str:
-        # Get´s the substitution alphabet for the different rotors
+        # Get´s the substitution alphabet for the different rotors.
         # Source: https://kryptografie.de/kryptografie/chiffre/enigma.htm
         match self.num:
             case 1:
@@ -35,3 +35,8 @@ class Walze:
                 return "FVPJIAOYEDRZXWGCTKUQSBNMHL"
             case _:
                 return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    def turn(self, num) -> None:
+        # Appends the first num letters to the end of
+        # the Alphabet to simulate a rotation of the rotor.
+        self.alphabet = self.alphabet[num % 26:] + self.alphabet[:num % 26]
