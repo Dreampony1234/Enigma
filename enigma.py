@@ -1,9 +1,9 @@
 import rotors as rt
 
 class Enigma:
-    def __init__(self, walze_u: rt.Rotor, walze_l: rt.Rotor, walze_m: rt.Rotor, walze_r: rt.Rotor, stecker: list = []):
-        self.walze_u: rt.Rotor = walze_u
-        self.walze_l: rt.Rotor = walze_l
-        self.walze_m: rt.Rotor = walze_m
-        self.walze_r: rt.Rotor = walze_r
+    def __init__(self, rotor_u: rt.Rotor, rotor_l: rt.Rotor, rotor_m: rt.Rotor, rotor_r: rt.Rotor, stecker: list = []):
+        self.rotor_u = rt.Rotor(num=11, leftAdjacentRotor=None)
+        self.rotor_l = rt.Rotor(num=1, leftAdjacentRotor=None)
+        self.rotor_m = rt.Rotor(num=2, leftAdjacentRotor=self.rotor_l)
+        self.rotor_r = rt.Rotor(num=3, leftAdjacentRotor=self.rotor_m)
         self.stecker = stecker
